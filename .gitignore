@@ -1,0 +1,83 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+.env/
+.venv/
+venv/
+ENV/
+env.bak/
+env/
+
+# Poetry
+poetry.lock
+
+# pipenv
+Pipfile.lock
+
+# VSCode / PyCharm / IDE configs
+.vscode/
+.idea/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# MyPy / Pylint / Coverage / Pytest
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.cache/
+.tox/
+.nox/
+*.cover
+*.log
+
+# Local env and settings
+.env.local
+.env.*.local
+.envrc
+.envrc.bak
+.env.example
+*.env
+
+# alembic
+alembic/versions/*.pyc
+alembic/versions/*.py
+alembic/versions/__pycache__/
+
+# SQLite (if used for local dev)
+*.sqlite3
+
+# Mac / Linux / Windows system files
+.DS_Store
+Thumbs.db
+
+# Docker / Compose
+*.pid
+docker-compose.override.yml
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+MANIFEST
+
+# Logs and temp
+*.log
+*.tmp
+*.swp
+*.swo
+
