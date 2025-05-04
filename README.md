@@ -20,7 +20,7 @@ A REST API service for creating and viewing purchase receipts, featuring:
 receipt_api/
 ├── app/
 │   ├── __init__.py
-│   ├── main.py                    ← entry point (uvicorn app.main:app)
+│   ├── main.py                   ← entry point (uvicorn app.main:app)
 │   ├── core/
 │   │   ├── __init__.py
 │   │   ├── settings.py           ← config (SECRET_KEY, DB, tokens)
