@@ -2,20 +2,18 @@
 
 ### Description
 A REST API service for creating and viewing purchase receipts, featuring:
-- JWT авторизації
-- CRUD для чеків
-- Публічного перегляду чеку
-- Фільтрації, пагінації
-- Опціональних pytest тестів
+- JWT authorization
+- CRUD for receipts
+- Public receipt viewing
+- Filtering, pagination
+- Optional test cases
 
-### Technologies
+### ✅ Requirements
+
 - Python 3.11+
-- FastAPI
-- PostgreSQL
-- Alembic
-- JWT (PyJWT)
-- Pydantic
-- Uvicorn
+- Poetry or pip + virtualenv
+- Docker (for PostgreSQL via docker-compose)
+- Make (optional but recommended)
 
 ### Project Structure
 ```
@@ -62,30 +60,40 @@ receipt_api/
 └── README.md                    ← project description, API, setup
 ```
 
-### Встановлення
+### Installation
 
 ```bash
 make create_env  # create a virtual environment
 make install     # install dependencies
-make up          # run postgres in docker
+make up          # start postgres via docker
 make migrate     # apply migrations
 make runserver   # run locally on :8000
 ```
 
 ### Database Structure
+
 - User(id, name, login, hashed_password)
 - Receipt(id, created_at, total, user_id, payment_type, payment_amount, rest)
 - ReceiptProduct(id, receipt_id, name, price, quantity, total_price)
 
-### API (Swagger available)
-- POST /users/register
-- POST /users/login
-- POST /receipts
-- GET /receipts
-- GET /receipts/{id}
-- GET /receipts/public/{id}?line_length=32
+### 📬 API Endpoints (Swagger)
+
+Method | Endpoint                 | Description
+-------|--------------------------|------------------------------
+POST   | /users/register          | Register a new user
+POST   | /users/login             | Log in and obtain JWT
+POST   | /receipts                | Create a new receipt
+GET    | /receipts                | Get user receipts (with filters)
+GET    | /receipts/{id}           | Get specific user receipt
+GET    | /receipts/public/{id}    | Public, text-mode receipt preview
 
 ### Testing
 ```bash
 make test
 ```
+
+### 💡 Notes
+
+- Environment variables can be configured in app/core/settings.py
+- PostgreSQL runs on localhost:5432 as per docker-compose.yml
+- You can tweak line formatting for public receipts via ?line_length=N
