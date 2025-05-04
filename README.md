@@ -60,7 +60,7 @@ receipt_api/
 └── README.md                    ← project description, API, setup
 ```
 
-### Installation
+### Installation and run
 
 ```bash
 make create_env  # create a virtual environment
